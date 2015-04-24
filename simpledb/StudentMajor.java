@@ -23,9 +23,7 @@ public class StudentMajor {
 			           + "from DEPT, STUDENT "
 			           + "where MajorId = DId";
 			//Date date2 = new Date(); 
-			millisStart = System.currentTimeMillis();
 			ResultSet rs = stmt.executeQuery(qry);
-			millisEnd = System.currentTimeMillis();
 			
 			// Step 3: loop through the result set
 			System.out.println("Name\tMajor");
@@ -34,8 +32,11 @@ public class StudentMajor {
 				String dname = rs.getString("DName");
 				System.out.println(sname + "\t" + dname);
 			}
-			System.out.println(millisEnd-millisStart);
+			rs = stmt.executeQuery("deleteDomain DEPT");
+			
 			rs.close();
+			
+			
 		}
 		catch(SQLException e) {
 			e.printStackTrace();
