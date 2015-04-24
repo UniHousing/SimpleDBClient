@@ -8,7 +8,7 @@ import simpledb.remote.SimpleDriver;
 public class testDB {
 	long millisStart = 0;
 	long millisEnd = 0;
-	int[] randNum = new int[10000];
+	int[] randNum = new int[1000];
 
 	public static int randInt(int min, int max) {
 
@@ -63,7 +63,7 @@ public class testDB {
 	public static void main(String[] args) {
 		long [] times={0,0,0};
 		testDB test= new testDB();
-		for (int i = 0; i < 3; i++) {
+		for (int i = 0; i < times.length; i++) {
 			times[i]=test.searchTime();
 			System.out.println(times[i]);
 		}
